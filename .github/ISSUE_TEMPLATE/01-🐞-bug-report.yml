@@ -53,6 +53,20 @@ body:
     validations:
       required: true
 
+- type: checkboxes
+  id: regression
+  attributes:
+    label: Regression
+    options:
+      - label: This worked in a previous version
+        required: false
+
+- type: input
+  id: last_working_version
+  attributes:
+    label: Last known working version (if applicable)
+    placeholder: "e.g. kotlinx.coroutines 1.7.3"
+
   - type: textarea
     id: reproducer
     attributes:
