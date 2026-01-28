@@ -41,7 +41,13 @@ body:
     attributes:
       label: Reproducer
       description: |
-        A minimal, self-contained example is the most helpful thing you can provide.
+        Any form of reproducer is welcome.
+
+        - A minimal, self-contained snippet is ideal
+        - A small sample project is great
+        - A real-world project or production code is also fine if isolating the issue is hard
+
+        If the code is private, please mention that — we can discuss alternatives.
       placeholder: |
         ```kotlin
         runBlocking {
