@@ -71,6 +71,7 @@ body:
         - High - Significant impact on productivity
         - Medium - Would be very helpful
         - Low - Nice to have
+      default: 2
     validations:
       required: true
 

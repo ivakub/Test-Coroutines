@@ -1,0 +1,82 @@
+name: 📚 Documentation Issue
+description: Report missing, unclear, or incorrect documentation in the Coroutines guide
+title: "[DOCS] "
+labels:
+  - guide
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Help us improve our documentation!
+
+        Good documentation is crucial for a great developer experience. Please let us know what's missing or confusing in the [Coroutines guide](https://kotlinlang.org/docs/coroutines-guide.html).
+
+  - type: dropdown
+    id: doc_type
+    attributes:
+      label: Documentation Type
+      description: What kind of documentation issue is this?
+      options:
+        - Missing documentation (feature not documented)
+        - Unclear/confusing documentation
+        - Incorrect/outdated documentation
+        - Typo or formatting issue
+        - Missing code examples
+        - Broken links
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Which page?
+      description: Drop a link to a specific page, unless you're reporting something that's missing entirely.
+      placeholder: "e.g., https://kotlinlang.org/docs/channels.html"
+    validations:
+      required: false
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: What can be improved?
+      description: Describe the problematic part. Is it misleading, unclear, or just something that didn’t work for you?
+      placeholder: |
+        The section about... is confusing because...
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested
+    attributes:
+      label: Is this explained better somewhere else?
+      description: Show us the explanation that made it click for you.
+      placeholder: |
+        I found a better explanation at...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      description: How much does this documentation issue affect users?
+      options:
+        - High - Prevents users from using a feature
+        - Medium - Makes feature difficult to understand
+        - Low - Minor confusion or inconvenience
+      default: 1
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: |
+        - Screenshots showing the issue
+        - Links to related documentation
+        - Examples from other projects that do this well
+      placeholder: Any additional information that would help...
+    validations:
+      required: false

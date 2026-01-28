@@ -1,0 +1,73 @@
+name: 🚀 Release Candidate Feedback
+description: Report a regression or issue found in a Release Candidate (RC)
+title: "RC: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Thank you for participating in the Release Candidate program!
+        
+        Finding a problem in an RC is extremely helpful. Please double-check that this problem is not present in the latest stable release.
+        The most important thing is letting us know there is a problem as soon as possible.
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Preflight Checklist
+      options:
+        - label: I have verified that this issue **does not** happen in the latest stable release
+          required: true
+        - label: I searched existing issues and did not find a duplicate
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What broke?
+      description: |
+        Describe the observed behavior. Even a vague description suffices, but a reproducer helps a lot.
+      placeholder: |
+        After updating to the RC, I noticed that...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproducer
+    attributes:
+      label: Reproducer
+      description: |
+        If you have a minimal example, please provide it here.
+      placeholder: |
+        ```kotlin
+        runBlocking {
+            // minimal example here
+        }
+        ```
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How critical is this for the stable release?
+      options:
+        - Critical - Must be fixed before stable release
+        - High - Significant impact
+        - Medium - Would be very helpful
+        - Low - Minor issue
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: |
+        Any other relevant information (OS, Kotlin version, logs, screenshots).
+      placeholder: Add any other context here...
+    validations:
+      required: false
