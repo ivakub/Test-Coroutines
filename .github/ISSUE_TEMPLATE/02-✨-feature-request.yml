@@ -1,88 +1,66 @@
-name: ✨ Feature Request
+name: ✨ Feature request
 description: Suggest a new feature or enhancement for kotlinx.coroutines
-title: "[FEATURE] "
+title: "[Feature] "
 labels:
   - enhancement
+
 body:
   - type: markdown
     attributes:
       value: |
-        ## Thanks for suggesting a feature!
+        Thanks for the idea!
 
-        We love hearing ideas from our community. Please help us understand your use case by filling out the sections below.
-        Before submitting, please check if this feature has already been requested.
+        Please focus on **what problem you’re trying to solve** and **why existing APIs don’t work well enough**.
 
-  - type: checkboxes
-    id: preflight
-    attributes:
-      label: Preflight Checklist
-      options:
-        - label: I have searched [existing requests](https://github.com/Kotlin/kotlinx.coroutines/issues?q=is%3Aissue+label%3Aenhancement) and this feature hasn't been requested yet
-          required: true
-        - label: I have checked the latest version of the library to see if it's already implemented
-          required: true
-        - label: I have considered if this feature is better suited for a third-party library
-          required: true
+        If you’re unsure whether this belongs here, that’s okay —
+        just describe your use case and we’ll figure it out together.
 
   - type: textarea
     id: use_case
     attributes:
-      label: Use Case
+      label: What are you trying to do?
       description: |
-        Explain what *specifically* you are trying to do and why.
-        Focus on the problem, not the solution.
+        Describe the problem or use case you’re facing.
+        Focus on *what* you want to achieve and *why* it’s difficult today.
       placeholder: |
-        Example: "I have a `SharedFlow<Double>` that represents readings from an external device..."
+        Example:
+        I have a SharedFlow that represents readings from an external device,
+        and I need to ...
     validations:
       required: true
 
   - type: textarea
-    id: api_shape
+    id: idea
     attributes:
-      label: The Shape of the API
+      label: Your idea (optional)
       description: |
-        What could the desired API look like? What would some sample code using the new feature look like?
-        If you don't have a clear idea, pseudocode or just explaining the API shape is also perfectly fine.
+        If you have an idea of what the solution or API could look like, feel free to share it.
+        Rough sketches, pseudocode, or examples are all welcome.
       placeholder: |
         ```kotlin
-        fun <T> Flow<T>.myNewOperator(): Flow<T> = ...
+        fun <T> Flow<T>.newOperator(): Flow<T>
         ```
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: prior_art
     attributes:
-      label: Prior Art
+      label: Prior art or similar ideas (optional)
       description: |
-        Are there any existing solutions, or does another library (like RxJava) have a similar feature?
+        Are there similar features in other libraries or ecosystems?
+        Links and comparisons are helpful, but not required.
       placeholder: |
-        RxJava has feature X, which solves this by...
+        RxJava has a similar operator that works like this...
     validations:
       required: false
-
-  - type: dropdown
-    id: priority
-    attributes:
-      label: Priority
-      description: How important is this feature to your workflow?
-      options:
-        - Critical - Blocking my work
-        - High - Significant impact on productivity
-        - Medium - Would be very helpful
-        - Low - Nice to have
-      default: 2
-    validations:
-      required: true
 
   - type: textarea
     id: additional
     attributes:
-      label: Additional Context
+      label: Anything else? (optional)
       description: |
-        - Screenshots or mockups
-        - Links to similar features
-        - Technical considerations
-      placeholder: Add any other context here...
+        Motivation, constraints, production experience, trade-offs —
+        anything that helps understand the request.
     validations:
       required: false
