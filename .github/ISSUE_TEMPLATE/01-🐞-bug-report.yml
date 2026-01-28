@@ -1,5 +1,5 @@
-name: 🐞 Bug Report
-description: Report incorrect or unexpected behavior in kotlinx.coroutines
+name: 🐞 Bug report
+description: Something in kotlinx.coroutines behaves incorrectly
 title: "[Bug] "
 labels:
   - bug
@@ -8,109 +8,45 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for reporting a problem!
+        Thanks for the report!
 
-        Please make sure this is actually a **bug in kotlinx.coroutines**, not expected behavior or an issue in a different library or your own code.
+        Please focus on **what happens** and **how to reproduce it**.
+        Everything else is optional.
 
-        **Before filing**, consider:
-        - If the behavior is documented but seems questionable, please use **Design Considerations** instead.
-        - If something is unclear, you may get faster clarification on  
-          [StackOverflow](https://stackoverflow.com/) or in the  
-          [Kotlin Slack](https://surveys.jetbrains.com/s3/kotlin-slack-sign-up).
-        - Ensure the issue reproduces with recent versions of Kotlin and kotlinx.coroutines.
-
-  - type: checkboxes
-    id: confirmation
-    attributes:
-      label: Initial Checks
-      options:
-        - label: I verified this issue happens in kotlinx.coroutines itself
-          required: true
-        - label: I am using a recent version of Kotlin and kotlinx.coroutines
-          required: true
-        - label: I searched existing issues and did not find a duplicate
-          required: true
+        If you’re not sure whether this is a bug or just unclear behavior,
+        you might get a quicker answer on
+        [StackOverflow](https://stackoverflow.com/) or in the
+        [Kotlin Slack](https://slack-chats.kotlinlang.org/).
 
   - type: textarea
     id: problem
     attributes:
-      label: What is going wrong?
-      description: Describe the observed behavior and why it is problematic.
+      label: What is happening?
       placeholder: |
-        Example:
-        A coroutine launched with SupervisorJob is cancelled when a sibling fails,
-        even though the documentation suggests it should continue running.
+        Describe what looks wrong or unexpected.
     validations:
       required: true
-
-  - type: textarea
-    id: expected
-    attributes:
-      label: What did you expect instead?
-      description: Explain what you believe should happen.
-      placeholder: |
-        The coroutine should remain active and continue execution independently.
-    validations:
-      required: true
-
-  - type: checkboxes
-    id: regression
-    attributes:
-      label: Regression
-      options:
-        - label: This worked in a previous version
-          required: false
-
-  - type: input
-    id: last_working_version
-    attributes:
-      label: Last known working version (if applicable)
-      placeholder: "e.g. kotlinx.coroutines 1.7.3"
 
   - type: textarea
     id: reproducer
     attributes:
       label: Reproducer
       description: |
-        Please provide a minimal, self-contained example that demonstrates the issue.
-
-        - A small project or single file is ideal
-        - If that’s not possible, share as much relevant code as you can
-        - If the code is private, mention that and we can discuss alternatives
+        A minimal, self-contained example is the most helpful thing you can provide.
       placeholder: |
         ```kotlin
         runBlocking {
-            // minimal example here
+            // minimal example
         }
         ```
     validations:
       required: true
 
-  - type: input
-    id: versions
-    attributes:
-      label: Versions
-      description: Kotlin and kotlinx.coroutines versions used
-      placeholder: "Kotlin 1.9.x, kotlinx.coroutines 1.8.x"
-    validations:
-      required: true
-
-  - type: textarea
-    id: environment
-    attributes:
-      label: Environment
-      description: Any relevant environment details (OS, platform, target, etc.)
-      placeholder: |
-        OS: macOS 14
-        Target: JVM / Android / Native / JS
-    validations:
-      required: false
-
   - type: textarea
     id: additional
     attributes:
-      label: Additional context
-      description: Anything else that may help understand or reproduce the issue.
-      placeholder: Links, logs, screenshots, related issues…
+      label: Anything else? (optional)
+      placeholder: |
+        What you expected, versions, environment, logs, links — whatever you think matters.
     validations:
       required: false
