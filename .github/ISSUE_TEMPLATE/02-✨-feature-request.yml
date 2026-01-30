@@ -28,6 +28,27 @@ body:
         and I need to ...
     validations:
       required: true
+      
+  - type: textarea
+    id: underlying_problem
+    attributes:
+      label: What problem does this actually solve?
+      description: |
+        Describe the underlying need, independent of any specific solution or API.
+        
+        In other words:
+        * What is hard or impossible to do today?
+        * What breaks or becomes unsafe/inefficient without this?
+        * How would you know that the problem is solved?
+        
+        Please avoid describing a specific operator or API here.
+      placeholder: |
+        Example:
+        In production we need to guarantee that ...
+        Without this, we end up with ...
+        Existing APIs fail because ...
+    validations:
+      required: true     
 
   - type: textarea
     id: idea
