@@ -46,7 +46,7 @@ body:
         If you have an idea how this could be explained better,
         or have seen a good explanation elsewhere, feel free to share.
       placeholder: |
-        This made more sense to me when explained like this...
+        This would make more sense to me with an explanation like this...
     validations:
       required: false
 
